@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AEEE89171D19E7E300807C3A"
+               BuildableName = "EarlGreyBootcampTests.xctest"
+               BlueprintName = "EarlGreyBootcampTests"
+               ReferencedContainer = "container:EarlGreyBootcamp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

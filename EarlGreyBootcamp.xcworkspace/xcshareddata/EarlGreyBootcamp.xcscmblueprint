@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A0FEBBC6848656624E943CF34DB97DBBE0F53462",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A0FEBBC6848656624E943CF34DB97DBBE0F53462" : 0,
+    "FFF0C8F0EC818BBFCF71A035CBA674284BF016D9" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "19FF5904-680B-4059-99FA-1BF1A11BC1BF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A0FEBBC6848656624E943CF34DB97DBBE0F53462" : "earlgrey-bootcamp\/",
+    "FFF0C8F0EC818BBFCF71A035CBA674284BF016D9" : "EarlGrey\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "EarlGreyBootcamp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "EarlGreyBootcamp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pivotal-gordon-krull\/earlgrey-bootcamp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A0FEBBC6848656624E943CF34DB97DBBE0F53462"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/google\/EarlGrey.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FFF0C8F0EC818BBFCF71A035CBA674284BF016D9"
+    }
+  ]
+}

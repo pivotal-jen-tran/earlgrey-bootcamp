@@ -28,6 +28,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    //
+    // Task #2
+    //
+    // Add accessibility label to table view
+    self.tableView.accessibilityLabel = @"PivotsTable";
+    
     self.sessionManager = [AFHTTPSessionManager new];
     [self.tableView registerClass:[UITableViewCell class]  forCellReuseIdentifier:@"cellReuse"];
     [[self loadPivotsFromDatabase] then:^id _Nullable(NSArray *pivotsArray) {

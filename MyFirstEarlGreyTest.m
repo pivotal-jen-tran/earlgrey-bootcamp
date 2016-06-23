@@ -10,17 +10,21 @@
 
 #import <XCTest/XCTest.h>
 
+
 @interface MyFirstEarlGreyTest : XCTestCase
 
 @end
 
+
 @implementation MyFirstEarlGreyTest
 
+//
+// Task #0
+//
 
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
 }
 
 - (void)testPresenceOfKeyWindow {
@@ -28,10 +32,18 @@
      assertWithMatcher:grey_sufficientlyVisible()];
 }
 
+//
+// Task #1
+//
+
 - (void)testSelectPivot {
     // Selects a pivot from the list
     [[EarlGrey selectElementWithMatcher:grey_accessibilityLabel(@"Gordon Krull")]
      performAction:grey_tap()];
 }
+
+//
+// Task #2
+//
 
 @end

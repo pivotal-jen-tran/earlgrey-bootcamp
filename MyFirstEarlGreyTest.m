@@ -42,9 +42,9 @@
      performAction:grey_tap()];
     
     // Go back to table
-    id<GREYMatcher> visibleBackButtonMatcher =
+    id<GREYMatcher> backButtonMatcher =
     grey_allOf(grey_accessibilityLabel(@"ETT Pivots"), grey_accessibilityTrait(UIAccessibilityTraitButton), nil);
-    [[EarlGrey selectElementWithMatcher:visibleBackButtonMatcher]
+    [[EarlGrey selectElementWithMatcher:backButtonMatcher]
      performAction:grey_tap()];
 }
 

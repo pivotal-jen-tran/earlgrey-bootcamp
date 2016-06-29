@@ -40,6 +40,12 @@
     // Selects a pivot from the list
     [[EarlGrey selectElementWithMatcher:grey_accessibilityLabel(@"Gordon Krull")]
      performAction:grey_tap()];
+    
+    // Go back to table
+    id<GREYMatcher> visibleBackButtonMatcher =
+    grey_allOf(grey_accessibilityLabel(@"ETT Pivots"), grey_accessibilityTrait(UIAccessibilityTraitButton), nil);
+    [[EarlGrey selectElementWithMatcher:visibleBackButtonMatcher]
+     performAction:grey_tap()];
 }
 
 //

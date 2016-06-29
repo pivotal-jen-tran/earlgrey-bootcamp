@@ -52,4 +52,17 @@
 // Task #2
 //
 
+- (void)testEnterCommentAndSubmit {
+    [[EarlGrey selectElementWithMatcher:grey_accessibilityLabel(@"Rodney Wong")]
+     performAction:grey_tap()];
+    [[EarlGrey selectElementWithMatcher:grey_accessibilityLabel(@"CommentField")]
+     performAction:grey_typeText(@"TEST")];
+    
+    // Find sufficiently visible Submit button
+    id<GREYMatcher> submitButtonMatcher =
+    grey_allOf(grey_accessibilityLabel(@"Submit"), grey_accessibilityTrait(UIAccessibilityTraitButton), nil);
+    [[EarlGrey selectElementWithMatcher:submitButtonMatcher]
+     performAction:grey_tap()];
+}
+
 @end

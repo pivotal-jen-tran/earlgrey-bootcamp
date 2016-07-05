@@ -87,4 +87,30 @@
     
 }
 
+//
+// Task #3
+//
+
+- (id<GREYMatcher>)matcherForGordon{
+    MatchesBlock matches = ^BOOL(UIView *cell) {
+        if ([cell isKindOfClass:[UITableViewCell class]]) {
+            NSString *label = [[(UITableViewCell *)cell textLabel] text];
+            return [label isEqualToString:@"Gordon Krull"];
+        } else {
+            return false;
+        }
+    };
+    DescribeToBlock describe = ^void(id<GREYDescription> description) {
+        [description appendText:@"Labels equal to Gordon Krull"];
+    };
+    
+    return [[GREYElementMatcherBlock alloc] initWithMatchesBlock:matches
+                                                descriptionBlock:describe];
+}
+
+- (void)testWithCustomGordonMatcher {
+    [[EarlGrey selectElementWithMatcher:[self matcherForGordon]]
+     performAction:grey_tap()];
+}
+
 @end

@@ -95,13 +95,13 @@
     MatchesBlock matches = ^BOOL(UIView *cell) {
         if ([cell isKindOfClass:[UITableViewCell class]]) {
             NSString *label = [[(UITableViewCell *)cell textLabel] text];
-            return [label isEqualToString:@"Gordon Krull"];
+            return [label rangeOfString:@"Gordon"].location != NSNotFound;
         } else {
             return false;
         }
     };
     DescribeToBlock describe = ^void(id<GREYDescription> description) {
-        [description appendText:@"Labels equal to Gordon Krull"];
+        [description appendText:@"Labels containing Gordon"];
     };
     
     return [[GREYElementMatcherBlock alloc] initWithMatchesBlock:matches

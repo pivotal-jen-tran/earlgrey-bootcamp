@@ -54,7 +54,7 @@
 
 - (void)testEnterCommentAndSubmit {
     // Iterate through each pivot
-    for (int i = 0; i < 3; i++) { // hardcoded
+    for (int i = 0; i < 4; i++) { // hardcoded
         
         // Matcher
         id<GREYMatcher> tableRowMatcher = grey_accessibilityLabel([NSString stringWithFormat:@"%ld", (long)i]);

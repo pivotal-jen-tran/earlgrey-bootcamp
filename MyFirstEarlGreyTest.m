@@ -52,20 +52,18 @@
 // Task #2
 //
 
-- (void)testEnterCommentAndSubmit {
+- (void)testLoopPivotsEnterCommentAndSubmit {
     // Iterate through each pivot
     for (int i = 0; i < 4; i++) { // hardcoded
         
-        // Matcher
-        id<GREYMatcher> tableRowMatcher = grey_accessibilityLabel([NSString stringWithFormat:@"%ld", (long)i]);
-        
         // Select the table row matching current index
+        id<GREYMatcher> tableRowMatcher = grey_accessibilityLabel([NSString stringWithFormat:@"%ld", (long)i]);
         [[EarlGrey selectElementWithMatcher:tableRowMatcher]
          performAction:grey_tap()];
         
         // Match the comment field button and enter text
         id<GREYMatcher> commentFieldMatcher =
-        grey_allOf(grey_accessibilityLabel(@"CommentField"), grey_sufficientlyVisible(), nil);
+        grey_allOf(grey_accessibilityLabel(@"CommentField"), nil);
         [[EarlGrey selectElementWithMatcher:commentFieldMatcher]
          performAction:grey_typeText(@"Test")];
         

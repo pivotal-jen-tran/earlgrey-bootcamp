@@ -72,6 +72,10 @@
     Pivot *pivot = self.pivots[indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellReuse" forIndexPath:indexPath];
     cell.textLabel.text = pivot.fullName;
+    
+    // Add an index label to each table row
+    cell.textLabel.accessibilityLabel = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    
     return cell;
 }
 

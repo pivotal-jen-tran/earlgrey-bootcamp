@@ -53,16 +53,40 @@
 //
 
 - (void)testEnterCommentAndSubmit {
-    [[EarlGrey selectElementWithMatcher:grey_accessibilityLabel(@"Rodney Wong")]
-     performAction:grey_tap()];
-    [[EarlGrey selectElementWithMatcher:grey_accessibilityLabel(@"CommentField")]
-     performAction:grey_typeText(@"TEST")];
+    // Iterate through each pivot
+    for (int i = 0; i < 3; i++) { // hardcoded
+        
+        // Matcher
+        id<GREYMatcher> tableRowMatcher = grey_accessibilityLabel([NSString stringWithFormat:@"%ld", (long)i]);
+        
+        // Select the table row matching current index
+        [[EarlGrey selectElementWithMatcher:tableRowMatcher]
+         performAction:grey_tap()];
+        
+        // Match the comment field button and enter text
+        id<GREYMatcher> commentFieldMatcher =
+        grey_allOf(grey_accessibilityLabel(@"CommentField"), grey_sufficientlyVisible(), nil);
+        [[EarlGrey selectElementWithMatcher:commentFieldMatcher]
+         performAction:grey_typeText(@"Test")];
+        
+        // Match the submit button and tap
+        id<GREYMatcher> submitButtonMatcher = grey_allOf(grey_accessibilityLabel(@"Submit"), grey_accessibilityTrait(UIAccessibilityTraitButton), nil);
+        [[EarlGrey selectElementWithMatcher:submitButtonMatcher]
+         performAction:grey_tap()];
+        
+        // Match the OK button and tap
+        id<GREYMatcher> okButtonMatcher = grey_allOf(grey_accessibilityLabel(@"OK"), grey_accessibilityTrait(UIAccessibilityTraitButton), nil);
+        [[EarlGrey selectElementWithMatcher:okButtonMatcher]
+         performAction:grey_tap()];
+        
+        // Go back to table
+        id<GREYMatcher> backButtonMatcher =
+        grey_allOf(grey_accessibilityLabel(@"ETT Pivots"), grey_accessibilityTrait(UIAccessibilityTraitButton), nil);
+        [[EarlGrey selectElementWithMatcher:backButtonMatcher]
+         performAction:grey_tap()];
+    }
     
-    // Find sufficiently visible Submit button
-    id<GREYMatcher> submitButtonMatcher =
-    grey_allOf(grey_accessibilityLabel(@"Submit"), grey_accessibilityTrait(UIAccessibilityTraitButton), nil);
-    [[EarlGrey selectElementWithMatcher:submitButtonMatcher]
-     performAction:grey_tap()];
+    
 }
 
 @end

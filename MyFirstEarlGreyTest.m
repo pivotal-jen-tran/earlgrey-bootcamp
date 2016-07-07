@@ -94,6 +94,7 @@
 - (id<GREYMatcher>)matcherForGordon{
     MatchesBlock matches = ^BOOL(UIView *cell) {
         if ([cell isKindOfClass:[UITableViewCell class]]) {
+            // Match table cells where their labels contain the string "Gordon"
             NSString *label = [[(UITableViewCell *)cell textLabel] text];
             return [label rangeOfString:@"Gordon"].location != NSNotFound;
         } else {
@@ -104,13 +105,14 @@
         [description appendText:@"Labels containing Gordon"];
     };
     
-    return [[GREYElementMatcherBlock alloc] initWithMatchesBlock:matches
-                                                descriptionBlock:describe];
+    return [[GREYElementMatcherBlock alloc] initWithMatchesBlock:matches descriptionBlock:describe];
 }
 
 - (void)testWithCustomGordonMatcher {
     [[EarlGrey selectElementWithMatcher:[self matcherForGordon]]
      performAction:grey_tap()];
 }
+
+
 
 @end
